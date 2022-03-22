@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-feature-table
+      author: ricardo.baumann
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: varchar(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: type
+                  type: varchar(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: usage_limit
+                  type: integer
+              - column:
+                  constraints:
+                    nullable: false
+                  name: default_price
+                  type: decimal(13,3)
+              - column:
+                  name: created_by
+                  type: varchar(100)
+              - column:
+                  name: modified_by
+                  type: varchar(100)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: modified_at
+                  type: timestamp
+            tableName: features

@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-initial-tables
+      author: ricardo.baumann
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: varchar(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: varchar(250)
+              - column:
+                  name: created_by
+                  type: varchar(100)
+              - column:
+                  name: modified_by
+                  type: varchar(100)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: modified_at
+                  type: timestamp
+            tableName: test
